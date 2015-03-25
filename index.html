@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<meta charset="utf8">
+</head>
+<body>
+<script type="text/javascript" src="lib/index.js"></script>
+<script type="text/javascript">
+	this.testDemo=function(xx){
+		if(xx){
+		this.xx=xx;
+		}
+		return this;
+	}
+  var demo1=testDemo('www');
+  alert(demo1.xx);
+  alert(this.xx);
+
+</script>
+</body>
+</html>
