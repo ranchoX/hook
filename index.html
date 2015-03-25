@@ -7,16 +7,14 @@
 <body>
 <script type="text/javascript" src="lib/index.js"></script>
 <script type="text/javascript">
-	this.testDemo=function(xx){
-		if(xx){
-		this.xx=xx;
-		}
-		return this;
-	}
-  var demo1=testDemo('www');
-  alert(demo1.xx);
-  alert(this.xx);
-
+	var xx=hook(Math, "max", function() {
+  console.log(arguments.length + " arguments passed");
+});
+console.log(Math.max(5, 6, 7))
+xx.after(function(){
+	console.log(arguments);
+})
+console.log(Math.max(5, 6, 7,9))
 </script>
 </body>
 </html>
